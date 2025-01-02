@@ -27,7 +27,7 @@ def main():
 
     # Button to reset tasks
     if st.button("Reset Tasks"):
-        keyboard.press_and_release("cmd+space")
+        keyboard.press_and_release("cmd+t")
         for task in st.session_state.tasks:
             task["completed"] = False
 
