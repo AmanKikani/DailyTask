@@ -1,5 +1,6 @@
 import streamlit as st
 import datetime
+import keyboard
 
 def main():
     st.title("Daily Task Tracker")
@@ -11,11 +12,11 @@ def main():
     # Load tasks from session state or initialize
     if "tasks" not in st.session_state:
         st.session_state.tasks = [
-            {"task": "Morning exercise", "completed": False},
-            {"task": "Check emails", "completed": False},
-            {"task": "Team meeting at 10 AM", "completed": False},
-            {"task": "Work on project report", "completed": False},
-            {"task": "Evening walk", "completed": False},
+            {"task": "Morning Run", "completed": False},
+            {"task": "Class", "completed": False},
+            {"task": "Workout", "completed": False},
+            {"task": "Lumin Ai Work", "completed": False},
+            {"task": "Homework", "completed": False},
         ]
 
     # Display tasks with checkboxes
@@ -26,6 +27,7 @@ def main():
 
     # Button to reset tasks
     if st.button("Reset Tasks"):
+        keyboard.press_and_release("cmd+space")
         for task in st.session_state.tasks:
             task["completed"] = False
 
